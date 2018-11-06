@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/autoload.php"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         verbose="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false">
+    <php>
+        <env name="SHAREDCOUNT_APIKEY" value="yourkey"/>
+    </php>
+    <testsuites>
+        <testsuite name="Sharedcount test suite">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
