@@ -31,9 +31,19 @@ The above example will output:
 5008
 ```
 
+## Configuration
+
+Make sure to define whether or not you have a free or paid subscription.
+
+The default is free. Use the following line to set a paying subscription.
+
+```php
+$sharedcount = new Sharedcount('yourapikeygoeshere', Sharedcount::SUBSCRIPTION_PAYING);
+```
+
 ## Running tests
 
-```composer test```
+Set your Sharedcount API key in phpunit.xml and run  ```composer test```.
 
 ## License
 
