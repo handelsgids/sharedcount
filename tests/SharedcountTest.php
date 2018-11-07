@@ -3,6 +3,7 @@
 namespace Handelsgids\Sharedcount\Test;
 
 use Handelsgids\Sharedcount\Sharedcount;
+use Handelsgids\Sharedcount\SharedcountQuota;
 use Handelsgids\Sharedcount\SharedcountResult;
 use PHPUnit\Framework\TestCase;
 
@@ -22,5 +23,13 @@ class SharedcountTest extends TestCase
         $result = $this->sharedcount->getByUrl('https://www.handelsgids.be/');
 
         $this->assertEquals('5008', $result->getFacebook()->getShareCount());
+    }
+
+    public function testQuota()
+    {
+        /** @var SharedcountQuota $result */
+        $result = $this->sharedcount->getQuota();
+
+        $this->assertEquals('200000', $result->getQuotaAllocatedToday());
     }
 }

@@ -72,6 +72,19 @@ class Sharedcount
     }
 
     /**
+     * @return SharedcountQuota
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getQuota()
+    {
+        $result = $this->call('/quota');
+
+        $sharedCountQuota = SharedcountQuotaHydrator::hydrate(json_decode($result, true));
+
+        return $sharedCountQuota;
+    }
+
+    /**
      * @param $endpoint
      * @param null $params
      * @return SharedcountResult
