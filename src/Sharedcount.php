@@ -66,7 +66,9 @@ class Sharedcount
 
         $result = $this->call('/', $params);
 
-        return $result;
+        $sharedCountResult = SharedcountResultHydrator::hydrate(json_decode($result, true));
+
+        return $sharedCountResult;
     }
 
     /**
@@ -98,8 +100,6 @@ class Sharedcount
         $response = $this->client->request('GET', $url);
         $contents = $response->getBody()->getContents();
 
-        $result = SharedcountResultHydrator::hydrate(json_decode($contents, true));
-
-        return $result;
+        return $contents;
     }
 }
