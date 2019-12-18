@@ -14,7 +14,7 @@ class SharedcountTest extends TestCase
 
     protected function setUp()
     {
-        $this->sharedcount = new Sharedcount($_ENV['SHAREDCOUNT_APIKEY'], Sharedcount::SUBSCRIPTION_PAYING);
+        $this->sharedcount = new Sharedcount($_ENV['SHAREDCOUNT_APIKEY'], Sharedcount::SUBSCRIPTION_FREE);
     }
 
     public function testGet()
@@ -22,7 +22,7 @@ class SharedcountTest extends TestCase
         /** @var SharedcountResult $result */
         $result = $this->sharedcount->getByUrl('https://www.handelsgids.be/');
 
-        $this->assertEquals('5008', $result->getFacebook()->getShareCount());
+        $this->assertEquals('7122', $result->getFacebook()->getShareCount());
     }
 
     public function testQuota()
@@ -30,6 +30,6 @@ class SharedcountTest extends TestCase
         /** @var SharedcountQuota $result */
         $result = $this->sharedcount->getQuota();
 
-        $this->assertEquals('200000', $result->getQuotaAllocatedToday());
+        $this->assertEquals('500', $result->getQuotaAllocatedToday());
     }
 }

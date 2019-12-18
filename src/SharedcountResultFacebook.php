@@ -4,26 +4,26 @@ namespace Handelsgids\Sharedcount;
 
 class SharedcountResultFacebook
 {
-    /** @var int */
+    /** @var string */
     private $commentPluginCount;
 
-    /** @var int */
+    /** @var string */
     private $totalCount;
 
-    /** @var int */
+    /** @var string */
     private $ogObject;
 
-    /** @var int */
+    /** @var string */
     private $commentCount;
 
-    /** @var int */
+    /** @var string */
     private $shareCount;
 
-    /** @var int */
+    /** @var string */
     private $reactionCount;
 
     /**
-     * @return int
+     * @return string
      */
     public function getCommentPluginCount()
     {
@@ -31,7 +31,9 @@ class SharedcountResultFacebook
     }
 
     /**
-     * @param int $commentPluginCount
+     * @param string $commentPluginCount
+     *
+     * @return void
      */
     public function setCommentPluginCount($commentPluginCount)
     {
@@ -39,7 +41,7 @@ class SharedcountResultFacebook
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getTotalCount()
     {
@@ -47,7 +49,9 @@ class SharedcountResultFacebook
     }
 
     /**
-     * @param int $totalCount
+     * @param string $totalCount
+     *
+     * @return void
      */
     public function setTotalCount($totalCount)
     {
@@ -55,7 +59,7 @@ class SharedcountResultFacebook
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getOgObject()
     {
@@ -63,7 +67,9 @@ class SharedcountResultFacebook
     }
 
     /**
-     * @param int $ogObject
+     * @param string $ogObject
+     *
+     * @return void
      */
     public function setOgObject($ogObject)
     {
@@ -71,7 +77,7 @@ class SharedcountResultFacebook
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getCommentCount()
     {
@@ -79,7 +85,9 @@ class SharedcountResultFacebook
     }
 
     /**
-     * @param int $commentCount
+     * @param string $commentCount
+     *
+     * @return void
      */
     public function setCommentCount($commentCount)
     {
@@ -87,7 +95,7 @@ class SharedcountResultFacebook
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getShareCount()
     {
@@ -95,7 +103,9 @@ class SharedcountResultFacebook
     }
 
     /**
-     * @param int $shareCount
+     * @param string $shareCount
+     *
+     * @return void
      */
     public function setShareCount($shareCount)
     {
@@ -103,7 +113,7 @@ class SharedcountResultFacebook
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getReactionCount()
     {
@@ -111,7 +121,9 @@ class SharedcountResultFacebook
     }
 
     /**
-     * @param int $reactionCount
+     * @param string $reactionCount
+     *
+     * @return void
      */
     public function setReactionCount($reactionCount)
     {

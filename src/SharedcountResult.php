@@ -4,23 +4,23 @@ namespace Handelsgids\Sharedcount;
 
 class SharedcountResult
 {
-    /** @var int */
+    /** @var string */
     private $stumbleUpon;
 
     /** @var SharedcountResultFacebook */
     private $facebook;
 
-    /** @var int */
+    /** @var string */
     private $googlePlusOne;
 
-    /** @var int */
+    /** @var string */
     private $pinterest;
 
-    /** @var int */
+    /** @var string */
     private $linkedIn;
 
     /**
-     * @return int
+     * @return string
      */
     public function getStumbleUpon()
     {
@@ -28,7 +28,9 @@ class SharedcountResult
     }
 
     /**
-     * @param int $stumbleUpon
+     * @param string $stumbleUpon
+     *
+     * @return void
      */
     public function setStumbleUpon($stumbleUpon)
     {
@@ -45,6 +47,8 @@ class SharedcountResult
 
     /**
      * @param SharedcountResultFacebook $facebook
+     *
+     * @return void
      */
     public function setFacebook($facebook)
     {
@@ -52,7 +56,7 @@ class SharedcountResult
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getGooglePlusOne()
     {
@@ -60,7 +64,9 @@ class SharedcountResult
     }
 
     /**
-     * @param int $googlePlusOne
+     * @param string $googlePlusOne
+     *
+     * @return void
      */
     public function setGooglePlusOne($googlePlusOne)
     {
@@ -68,7 +74,7 @@ class SharedcountResult
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getPinterest()
     {
@@ -76,7 +82,9 @@ class SharedcountResult
     }
 
     /**
-     * @param int $pinterest
+     * @param string $pinterest
+     *
+     * @return void
      */
     public function setPinterest($pinterest)
     {
@@ -84,7 +92,7 @@ class SharedcountResult
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getLinkedIn()
     {
@@ -92,7 +100,9 @@ class SharedcountResult
     }
 
     /**
-     * @param int $linkedIn
+     * @param string $linkedIn
+     *
+     * @return void
      */
     public function setLinkedIn($linkedIn)
     {

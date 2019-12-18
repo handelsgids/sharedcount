@@ -4,20 +4,20 @@ namespace Handelsgids\Sharedcount;
 
 class SharedcountQuota
 {
-    /** @var int */
+    /** @var string */
     private $quotaUsedToday;
 
-    /** @var int */
+    /** @var string */
     private $plan;
 
-    /** @var int */
+    /** @var string */
     private $quotaRemainingToday;
 
-    /** @var int */
+    /** @var string */
     private $quotaAllocatedToday;
 
     /**
-     * @return int
+     * @return string
      */
     public function getQuotaUsedToday()
     {
@@ -25,7 +25,9 @@ class SharedcountQuota
     }
 
     /**
-     * @param int $quotaUsedToday
+     * @param string $quotaUsedToday
+     *
+     * @return void
      */
     public function setQuotaUsedToday($quotaUsedToday)
     {
@@ -33,7 +35,7 @@ class SharedcountQuota
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getPlan()
     {
@@ -41,7 +43,9 @@ class SharedcountQuota
     }
 
     /**
-     * @param int $plan
+     * @param string $plan
+     *
+     * @return void
      */
     public function setPlan($plan)
     {
@@ -49,7 +53,7 @@ class SharedcountQuota
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getQuotaRemainingToday()
     {
@@ -57,7 +61,9 @@ class SharedcountQuota
     }
 
     /**
-     * @param int $quotaRemainingToday
+     * @param string $quotaRemainingToday
+     *
+     * @return void
      */
     public function setQuotaRemainingToday($quotaRemainingToday)
     {
@@ -65,7 +71,7 @@ class SharedcountQuota
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getQuotaAllocatedToday()
     {
@@ -73,7 +79,9 @@ class SharedcountQuota
     }
 
     /**
-     * @param int $quotaAllocatedToday
+     * @param string $quotaAllocatedToday
+     *
+     * @return void
      */
     public function setQuotaAllocatedToday($quotaAllocatedToday)
     {

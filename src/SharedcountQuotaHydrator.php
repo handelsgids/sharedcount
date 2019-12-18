@@ -5,7 +5,8 @@ namespace Handelsgids\Sharedcount;
 class SharedcountQuotaHydrator
 {
     /**
-     * @param array $data
+     * @param string[] $data
+     *
      * @return SharedcountQuota
      */
     public static function hydrate($data)

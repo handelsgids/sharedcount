@@ -3,6 +3,7 @@
 namespace Handelsgids\Sharedcount;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 
 /**
  * Class Sharedcount
@@ -28,8 +29,8 @@ class Sharedcount
 
     /**
      * Sharedcount constructor.
-     * @param string $apikey
-     * @param null|string $subscription
+     * @param string      $apikey
+     * @param string|null $subscription
      */
     public function __construct($apikey, $subscription = null)
     {
@@ -44,13 +45,13 @@ class Sharedcount
     }
 
     /**
-     * @param $url
-     * @param null $customTtl
-     * @param null $JSONPCallback
+     * @param string      $url
+     * @param string|null $customTtl
+     * @param string|null $JSONPCallback
+     *
      * @return SharedcountResult
-     * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getByUrl($url, $customTtl = null, $JSONPCallback = null)
+    public function getByUrl($url = '', $customTtl = null, $JSONPCallback = null)
     {
         $params = [
             'url' => $url
@@ -66,36 +67,35 @@ class Sharedcount
 
         $result = $this->call('/', $params);
 
-        $sharedCountResult = SharedcountResultHydrator::hydrate(json_decode($result, true));
+        $sharedCountResult = SharedcountResultHydrator::hydrate(
+            json_decode($result, true)
+        );
 
         return $sharedCountResult;
     }
 
     /**
      * @return SharedcountQuota
-     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getQuota()
     {
         $result = $this->call('/quota');
 
-        $sharedCountQuota = SharedcountQuotaHydrator::hydrate(json_decode($result, true));
+        $sharedCountQuota = SharedcountQuotaHydrator::hydrate(
+            json_decode($result, true)
+        );
 
         return $sharedCountQuota;
     }
 
     /**
-     * @param $endpoint
-     * @param null $params
-     * @return SharedcountResult
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @param string   $endpoint
+     * @param string[] $params
+     *
+     * @return string
      */
-    private function call($endpoint, $params = null)
+    private function call($endpoint = '', $params = [])
     {
-        if ($params === null) {
-            $params = [];
-        }
-
         $params['apikey'] = $this->apikey;
 
         $apiUrl = self::API_URL_FREE;
@@ -110,8 +110,12 @@ class Sharedcount
             http_build_query($params)
         );
 
-        $response = $this->client->request('GET', $url);
-        $contents = $response->getBody()->getContents();
+        try {
+            $response = $this->client->request('GET', $url);
+            $contents = $response->getBody()->getContents();
+        } catch (GuzzleException $exception) {
+            $contents = '';
+        }
 
         return $contents;
     }
