@@ -22,7 +22,7 @@ class SharedcountTest extends TestCase
         /** @var SharedcountResult $result */
         $result = $this->sharedcount->getByUrl('https://www.handelsgids.be/');
 
-        $this->assertEquals('7122', $result->getFacebook()->getShareCount());
+        $this->assertGreaterThan('10000', $result->getFacebook()->getShareCount());
     }
 
     public function testQuota()
